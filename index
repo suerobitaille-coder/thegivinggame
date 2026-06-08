@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Giving Game — Cards | EP Wealth Advisors</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: #ccc;
+  padding: 20px;
+  color: #1a1a1a;
+}
+
+.instructions {
+  max-width: 860px;
+  margin: 0 auto 24px;
+  background: #1a1a2e;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.inst-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 4px;
+}
+.inst-text p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.print-btn {
+  background: #c9922a; color: #fff; border: none;
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 12px 26px; cursor: pointer; white-space: nowrap; flex-shrink: 0;
+}
+.print-btn:hover { background: #a87820; }
+
+/* PAGE — 4 cards per page */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto 24px;
+  background: white;
+  padding: 0.45in;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.22in;
+}
+
+/* CARD */
+.card {
+  border: 2px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  min-height: 4.6in;
+}
+
+/* Header — thick black band, category name only */
+.card-header {
+  background: #1a1a1a;
+  padding: 14px 20px;
+  flex-shrink: 0;
+}
+
+.card-category {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* Age tag — sits just below header */
+.card-tag {
+  padding: 8px 20px;
+  border-bottom: 1px solid #1a1a1a;
+  flex-shrink: 0;
+}
+
+.tag-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Body — question fills the space */
+.card-body {
+  flex: 1;
+  padding: 24px 20px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.card-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* Footer */
+.card-footer {
+  padding: 8px 20px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footer-firm {
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.footer-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: #bbb;
+}
+
+/* PRINT */
+@media print {
+  body { background: white; padding: 0; }
+  .instructions { display: none; }
+  .page {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: 0.45in;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: avoid; break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="instructions">
+  <div class="inst-text">
+    <h2>The Giving Game — 20 Cards</h2>
+    <p>Print on cardstock. Cut along edges. 4 cards per page · 5 pages · 20 cards total.<br>One universal + three age adaptations per category. Youngest goes first. No wrong answers.</p>
+  </div>
+  <button class="print-btn" onclick="window.print()">Print Cards</button>
+</div>
+
+<!-- ═══════════════ PAGE 1 — DREAM BIG ═══════════════ -->
+<div class="page">
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Dream Big</div></div>
+    <div class="card-tag"><div class="tag-label">For Everyone</div></div>
+    <div class="card-body">
+      <div class="card-question">"If you could be the best at anything in the world — what would it be, and what would you do with that gift?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">1 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Dream Big</div></div>
+    <div class="card-tag"><div class="tag-label">Younger Children</div></div>
+    <div class="card-body">
+      <div class="card-question">"If you could do any job in the world when you grow up — what would it be and why?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">2 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Dream Big</div></div>
+    <div class="card-tag"><div class="tag-label">Teenagers</div></div>
+    <div class="card-body">
+      <div class="card-question">"If money and time were no obstacle — what would your life look like five years from now?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">3 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Dream Big</div></div>
+    <div class="card-tag"><div class="tag-label">Young Adults</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's one dream you have quietly talked yourself out of — and what would it take to revisit it?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">4 / 20</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 2 — LEARNING PATHS ═══════════════ -->
+<div class="page">
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Learning Paths</div></div>
+    <div class="card-tag"><div class="tag-label">For Everyone</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's one thing you've learned — inside a classroom or outside of one — that genuinely changed how you see the world?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">5 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Learning Paths</div></div>
+    <div class="card-tag"><div class="tag-label">Younger Children</div></div>
+    <div class="card-body">
+      <div class="card-question">"If you could learn anything in the world — what would you want to learn, and why?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">6 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Learning Paths</div></div>
+    <div class="card-tag"><div class="tag-label">Teenagers</div></div>
+    <div class="card-body">
+      <div class="card-question">"If you had $1,000 to spend on learning something new — what would you choose, and why?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">7 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Learning Paths</div></div>
+    <div class="card-tag"><div class="tag-label">Young Adults</div></div>
+    <div class="card-body">
+      <div class="card-question">"Are you living up to what you studied or learned — and if not, what would it take to change that?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">8 / 20</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 3 — FAMILY VALUES ═══════════════ -->
+<div class="page">
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Family Values</div></div>
+    <div class="card-tag"><div class="tag-label">For Everyone</div></div>
+    <div class="card-body">
+      <div class="card-question">"What makes you most proud to be part of this family — and what do you hope never changes?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">9 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Family Values</div></div>
+    <div class="card-tag"><div class="tag-label">Younger Children</div></div>
+    <div class="card-body">
+      <div class="card-question">"What is your favorite thing about our family — and what is one thing you hope we always do together?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">10 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Family Values</div></div>
+    <div class="card-tag"><div class="tag-label">Teenagers</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's one thing this family believes in that you have made your own — and one thing you're still figuring out?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">11 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Family Values</div></div>
+    <div class="card-tag"><div class="tag-label">Young Adults</div></div>
+    <div class="card-body">
+      <div class="card-question">"What values, habits, and perspectives did this family give you that you carry with you every single day?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">12 / 20</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 4 — MONEY MATTERS ═══════════════ -->
+<div class="page">
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Money Matters</div></div>
+    <div class="card-tag"><div class="tag-label">For Everyone</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's the most important thing this family ever taught you about money — and do you believe it's true?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">13 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Money Matters</div></div>
+    <div class="card-tag"><div class="tag-label">Younger Children</div></div>
+    <div class="card-body">
+      <div class="card-question">"If someone gave you $100 right now — would you spend it, save it, or give it away, and why?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">14 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Money Matters</div></div>
+    <div class="card-tag"><div class="tag-label">Teenagers</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's one thing you want to be financially independent enough to do — that you cannot do right now?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">15 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Money Matters</div></div>
+    <div class="card-tag"><div class="tag-label">Young Adults</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's the best financial decision you have ever made — and what gave you the courage to make it?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">16 / 20</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 5 — GIVE WITH PURPOSE ═══════════════ -->
+<div class="page">
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Give With Purpose</div></div>
+    <div class="card-tag"><div class="tag-label">For Everyone</div></div>
+    <div class="card-body">
+      <div class="card-question">"If this family could do one thing together to make the world better — this year, not someday — what would it be?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">17 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Give With Purpose</div></div>
+    <div class="card-tag"><div class="tag-label">Younger Children</div></div>
+    <div class="card-body">
+      <div class="card-question">"What's one problem in the world that makes you feel sad — and what do you wish someone would do about it?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">18 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Give With Purpose</div></div>
+    <div class="card-tag"><div class="tag-label">Teenagers</div></div>
+    <div class="card-body">
+      <div class="card-question">"What cause do you care about so much that you would give your time — not just money — to fight for it?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">19 / 20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-category">Give With Purpose</div></div>
+    <div class="card-tag"><div class="tag-label">Young Adults</div></div>
+    <div class="card-body">
+      <div class="card-question">"Is there a cause you are already personally committed to — and could this family support it together?"</div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-firm">EP Wealth Advisors · The Giving Game</div>
+      <div class="footer-num">20 / 20</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
